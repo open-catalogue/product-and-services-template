@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Green Field Agro Services | Agricultural Services</title>
+  <meta name="description" content="Agricultural services including farm workers, machinery, equipment rental, land preparation, harvesting and other farm support services.">
+
+  <!-- Bootstrap 5 + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand: #356b3d;
+      --brand-dark: #1e4d2b;
+      --accent: #d6a84f;
+      --cream: #f7f4e9;
+      --text: #28352b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: #fcfbf6;
+      color: var(--text);
+    }
+
+    h1, h2, h3, .brand-font {
+      font-family: "Playfair Display", serif;
+    }
+
+    .navbar {
+      border-bottom: 1px solid #e2e5d8;
+    }
+
+    .navbar-brand {
+      color: var(--brand-dark) !important;
+      font-weight: 700;
+    }
+
+    .nav-link {
+      color: #334238 !important;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: var(--brand) !important;
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        linear-gradient(rgba(19, 47, 25, .72), rgba(19, 47, 25, .72)),
+        url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero-content {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      line-height: 1.05;
+      font-weight: 700;
+    }
+
+    .hero-sub {
+      max-width: 680px;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,.9);
+    }
+
+    .hero-contact i {
+      color: #f1d78c;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 50px;
+      padding: .45rem .9rem;
+      font-size: .85rem;
+    }
+
+    .section-title {
+      color: var(--brand-dark);
+      font-weight: 700;
+      display: inline-block;
+      border-bottom: 3px double #d5c58f;
+      padding-bottom: .35rem;
+    }
+
+    .service-section {
+      background: #f7f5ed;
+    }
+
+    .service-card {
+      height: 100%;
+      background: #fff;
+      border: 1px solid #e0e4d7;
+      border-radius: 18px;
+      overflow: hidden;
+      /* box-shadow: 0 8px 24px rgba(40, 60, 40, .05); */
+      transition: .25s ease;
+    }
+
+    .service-card:hover {
+      /* transform: translateY(-6px); */
+      box-shadow: 0 16px 32px rgba(40, 60, 40, .10);
+      border-color: #c5d0bd;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: #e8f1e5;
+      color: var(--brand);
+      font-size: 1.5rem;
+    }
+
+    .service-card .card-title {
+      color: var(--brand-dark);
+      font-weight: 700;
+    }
+
+    .service-card p {
+      color: #617064;
+      line-height: 1.65;
+    }
+
+    .tag {
+      background: #eef3e9;
+      color: #47634c;
+      border-radius: 50px;
+      padding: .3rem .75rem;
+      font-size: .78rem;
+    }
+
+    .why-card {
+      background: white;
+      border: 1px solid #e2e6dc;
+      border-radius: 16px;
+      height: 100%;
+    }
+
+    .why-card i {
+      font-size: 2rem;
+      color: var(--brand);
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, #285f34, #477a45);
+      color: white;
+    }
+
+    .contact-box {
+      background: #fff;
+      border: 1px solid #e0e5dc;
+      border-radius: 18px;
+    }
+
+    footer {
+      background: #1e3423;
+      color: #dce6da;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 1050;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      font-size: 2rem;
+      box-shadow: 0 8px 22px rgba(0,0,0,.22);
+      transition: .2s ease;
+    }
+
+    .whatsapp-float:hover {
+      color: white;
+      transform: scale(1.08);
+      box-shadow: 0 10px 28px rgba(0,0,0,.28);
+    }
+
+    .whatsapp-label {
+      position: fixed;
+      right: 92px;
+      bottom: 31px;
+      z-index: 1049;
+      background: #1f3023;
+      color: white;
+      padding: .45rem .8rem;
+      border-radius: 8px;
+      font-size: .82rem;
+      opacity: 0;
+      transform: translateX(8px);
+      pointer-events: none;
+      transition: .2s ease;
+    }
+
+    .whatsapp-float:hover + .whatsapp-label {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @media (max-width: 576px) {
+      .hero {
+        min-height: 88vh;
+      }
+
+      .hero-content {
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+      }
+
+      .hero-title {
+        font-size: 2.8rem;
+      }
+
+      .hero-sub {
+        font-size: 1rem;
+      }
+
+      .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        right: 16px;
+        bottom: 16px;
+      }
+
+      .whatsapp-label {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP NAVIGATION -->
+  <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm">
+    <div class="container py-1">
+
+      <a href="/" class="navbar-brand d-flex align-items-center gap-2 fs-4">
+        <i class="bi bi-flower1"></i>
+        Green Field Agro Services
+      </a>
+
+      <button class="navbar-toggler border-0" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto gap-lg-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#home"><i class="bi bi-house-door me-1"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services"><i class="bi bi-tools me-1"></i>Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#why-us"><i class="bi bi-patch-check me-1"></i>Why Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact"><i class="bi bi-telephone me-1"></i>Contact</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <div class="row">
+        <div class="col-lg-8">
+
+          <span class="hero-badge mb-3">
+            <i class="bi bi-leaf me-1"></i> Agricultural Support Services
+          </span>
+
+          <h1 class="hero-title mt-3 mb-3">
+            Reliable Support for Your Farm
+          </h1>
+
+          <p class="hero-sub mb-4">
+            Farm workers, agricultural machinery, equipment and practical field
+            support — helping farmers complete their work efficiently and on time.
+          </p>
+
+          <div class="hero-contact d-flex flex-wrap gap-4 mb-4">
+            <div>
+              <i class="bi bi-geo-alt-fill me-2"></i>
+              Your Location, Kerala
+            </div>
+            <div>
+              <i class="bi bi-telephone-fill me-2"></i>
+              +91 98765 43210
+            </div>
+            <div>
+              <i class="bi bi-clock-fill me-2"></i>
+              Mon – Sat · 7:00 AM – 7:00 PM
+            </div>
+          </div>
+
+          <a href="https://wa.me/919876543210?text=Hello%2C%20I%20would%20like%20to%20know%20about%20your%20agricultural%20services."
+             target="_blank"
+             class="btn btn-light btn-lg rounded-pill px-4 fw-semibold">
+            <i class="bi bi-whatsapp me-2"></i>Enquire on WhatsApp
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="service-section py-5">
+    <div class="container py-4">
+
+      <div class="text-center mb-5">
+        <h2 class="section-title">Our Agricultural Services</h2>
+        <p class="text-secondary mt-3 mb-0">
+          Flexible farm support for individual farmers, landowners and agricultural projects.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Service 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=80"
+                 alt="Agricultural workers in a field" loading="lazy">
+            <div class="p-4">
+              <div class="service-icon mb-3">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <h3 class="card-title h4">Farm Workers</h3>
+              <p>
+                Skilled and general agricultural workers for planting, weeding,
+                harvesting, cleaning and other field activities.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tag">Field Work</span>
+                <span class="tag">Harvesting</span>
+                <span class="tag">Planting</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=900&q=80"
+                 alt="Agricultural machinery working on farmland" loading="lazy">
+            <div class="p-4">
+              <div class="service-icon mb-3">
+                <i class="bi bi-gear-wide-connected"></i>
+              </div>
+              <h3 class="card-title h4">Farm Machinery</h3>
+              <p>
+                Agricultural machinery and operators for land preparation,
+                cultivation and other farm operations.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tag">Tractor</span>
+                <span class="tag">Land Preparation</span>
+                <span class="tag">Operators</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1557234195-bd9f290f0e4d?auto=format&fit=crop&w=900&q=80"
+                 alt="Agricultural equipment" loading="lazy">
+            <div class="p-4">
+              <div class="service-icon mb-3">
+                <i class="bi bi-wrench-adjustable"></i>
+              </div>
+              <h3 class="card-title h4">Equipment Rental</h3>
+              <p>
+                Useful agricultural tools and equipment available for short-term
+                or project-based requirements.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tag">Tools</span>
+                <span class="tag">Equipment</span>
+                <span class="tag">Rental</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=900&q=80"
+                 alt="Land preparation for agriculture" loading="lazy">
+            <div class="p-4">
+              <div class="service-icon mb-3">
+                <i class="bi bi-moisture"></i>
+              </div>
+              <h3 class="card-title h4">Land Preparation</h3>
+              <p>
+                Support for preparing agricultural land before planting,
+                including clearing, tilling and related field work.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tag">Tilling</span>
+                <span class="tag">Clearing</span>
+                <span class="tag">Field Work</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?auto=format&fit=crop&w=900&q=80"
+                 alt="Harvesting agricultural crops" loading="lazy">
+            <div class="p-4">
+              <div class="service-icon mb-3">
+                <i class="bi bi-basket2-fill"></i>
+              </div>
+              <h3 class="card-title h4">Harvest Support</h3>
+              <p>
+                Labour and equipment support for harvesting, collection,
+                sorting and moving agricultural produce.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tag">Harvesting</span>
+                <span class="tag">Collection</span>
+                <span class="tag">Loading</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=80"
+                 alt="Green agricultural field" loading="lazy">
+            <div class="p-4">
+              <div class="service-icon mb-3">
+                <i class="bi bi-tree-fill"></i>
+              </div>
+              <h3 class="card-title h4">Other Farm Services</h3>
+              <p>
+                Have a specific agricultural requirement? Contact us to discuss
+                the workers, equipment or field support you need.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tag">Custom Work</span>
+                <span class="tag">Farm Support</span>
+                <span class="tag">Enquiry</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why-us" class="py-5 bg-white">
+    <div class="container py-4">
+
+      <div class="text-center mb-5">
+        <h2 class="section-title">Why Choose Us</h2>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="why-card p-4 text-center">
+            <i class="bi bi-people-fill"></i>
+            <h3 class="h5 fw-bold mt-3">Reliable Workers</h3>
+            <p class="text-secondary small mb-0">
+              Labour support based on your farm's requirements.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="why-card p-4 text-center">
+            <i class="bi bi-tools"></i>
+            <h3 class="h5 fw-bold mt-3">Useful Equipment</h3>
+            <p class="text-secondary small mb-0">
+              Access to agricultural tools and machinery for different jobs.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="why-card p-4 text-center">
+            <i class="bi bi-calendar-check"></i>
+            <h3 class="h5 fw-bold mt-3">Flexible Booking</h3>
+            <p class="text-secondary small mb-0">
+              Discuss your preferred date, duration and type of work.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="why-card p-4 text-center">
+            <i class="bi bi-chat-dots-fill"></i>
+            <h3 class="h5 fw-bold mt-3">Easy Enquiry</h3>
+            <p class="text-secondary small mb-0">
+              Quickly contact us through WhatsApp for availability and pricing.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section py-5">
+    <div class="container py-4 text-center">
+      <h2 class="display-6 fw-bold mb-3">Need Workers or Equipment?</h2>
+      <p class="lead opacity-75 mb-4">
+        Tell us what agricultural work you need help with.
+      </p>
+      <a href="https://wa.me/919876543210?text=Hello%2C%20I%20need%20agricultural%20services."
+         target="_blank"
+         class="btn btn-light btn-lg rounded-pill px-4 fw-semibold">
+        <i class="bi bi-whatsapp me-2"></i>Contact Us on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5">
+    <div class="container py-4">
+
+      <div class="text-center mb-4">
+        <h2 class="section-title">Contact & Location</h2>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+
+        <div class="col-lg-5">
+          <div class="contact-box h-100 p-4">
+            <h3 class="brand-font h3 mb-4">Green Field Agro Services</h3>
+
+            <div class="d-flex gap-3 mb-3">
+              <i class="bi bi-geo-alt-fill text-success fs-5"></i>
+              <div>
+                <strong>Location</strong><br>
+                Your Area, Kerala, India
+              </div>
+            </div>
+
+            <div class="d-flex gap-3 mb-3">
+              <i class="bi bi-telephone-fill text-success fs-5"></i>
+              <div>
+                <strong>Phone</strong><br>
+                +91 98765 43210
+              </div>
+            </div>
+
+            <div class="d-flex gap-3 mb-4">
+              <i class="bi bi-clock-fill text-success fs-5"></i>
+              <div>
+                <strong>Working Hours</strong><br>
+                Monday – Saturday · 7:00 AM – 7:00 PM
+              </div>
+            </div>
+
+            <a href="https://wa.me/919876543210"
+               target="_blank"
+               class="btn btn-success rounded-pill px-4">
+              <i class="bi bi-whatsapp me-2"></i>WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <!-- Replace this Google Maps embed URL with the business location -->
+          <iframe
+            class="w-100 h-100 rounded-4"
+            src="https://www.google.com/maps?q=Kerala,India&output=embed"
+            style="min-height:320px; border:0;"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4">
+    <div class="container text-center">
+      <div class="fw-semibold">
+        <i class="bi bi-flower1 me-1"></i>
+        Green Field Agro Services
+      </div>
+      <div class="small opacity-75 mt-1">
+        Agricultural Workers · Machinery · Equipment · Farm Support
+      </div>
+      <div class="small opacity-50 mt-2">
+        © 2026 All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- FIXED WHATSAPP BUTTON -->
+  <a href="https://wa.me/919876543210?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20agricultural%20services."
+     class="whatsapp-float"
+     target="_blank"
+     aria-label="Contact us on WhatsApp"
+     title="Contact us on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+  <span class="whatsapp-label">Chat on WhatsApp</span>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
